@@ -1,6 +1,7 @@
 import client, { Channel, Connection, ConsumeMessage } from "amqplib";
+import { configDotenv } from "dotenv";
 
-require('dotenv').config();
+configDotenv()
 
 
 export class SetupRabbitMQ {

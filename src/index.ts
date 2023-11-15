@@ -5,8 +5,9 @@ import cookieParser from 'cookie-parser'
 import compression from 'compression'
 import http from 'http';
 import router from './routers';
+import { configDotenv } from "dotenv";
 
-require('dotenv').config();
+configDotenv()
 
 
 const app = express()
