@@ -1,0 +1,6 @@
+# nodejs items
+node_modules/
+package-lock.json
+
+# vscode items
+.vscode/
