@@ -4,3 +4,6 @@ package-lock.json
 
 # vscode items
 .vscode/
+
+# files
+*.log
