@@ -19,7 +19,7 @@ export const Logger = () => expressWinston.logger({
     transports: [
         new transports.Console(),
         new transports.File({
-            level: 'warn',
+            level: 'warn' || 'error',
             dirname: 'src/logs',
             filename: 'logsErrors.log'
         }),
