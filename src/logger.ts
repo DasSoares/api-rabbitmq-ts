@@ -5,8 +5,9 @@ import { transports, format } from 'winston';
 const myFormatLogger = format.printf(({ level, meta, timestamp, message }) => {
     const statusCode = meta.res.statusCode;
     const agent = meta.req.headers['user-agent'];
+    const sLevel = level.toUpperCase().padEnd(7);
 
-    return `[${timestamp}] ${statusCode} ${level.toUpperCase()}: ${message} - "${agent}"`;
+    return `[${timestamp}] ${statusCode} ${sLevel}: ${message} - "${agent}"`;
 })
 
 /**
@@ -19,12 +20,12 @@ export const Logger = () => expressWinston.logger({
         new transports.Console(),
         new transports.File({
             level: 'warn',
-            dirname: 'logs',
+            dirname: 'src/logs',
             filename: 'logsErrors.log'
         }),
         new transports.File({
             level: 'info',
-            dirname: 'logs',
+            dirname: 'src/logs',
             filename: 'logsSuccess.log'
         }),
     ],

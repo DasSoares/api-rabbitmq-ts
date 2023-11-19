@@ -21,8 +21,8 @@ export class SetupRabbitMQ {
     }
 
     async close(): Promise<void> {
-        await this.channel.close();
-        await this.connection.close();
+        if (this.channel) await this.channel.close();
+        if (this.connection) await this.connection.close();
     }
 
     private async getConnection(): Promise<void> {
