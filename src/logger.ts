@@ -8,7 +8,7 @@ const myFormatLogger = format.printf(({ level, meta, timestamp, message }) => {
     const sLevel = level.toUpperCase().padEnd(7);
 
     return `[${timestamp}] ${statusCode} ${sLevel}: ${message} - "${agent}"`;
-})
+});
 
 /**
  * 

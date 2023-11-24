@@ -47,7 +47,7 @@ export class SetupRabbitMQ {
             if (message?.content.toString()){
                 var messageJson = JSON.parse(message.content.toString());
                 arr.push(messageJson);
-                // this.channel.ack(msg) // remove a mensagem da fila
+                // this.channel.ack(messageJson) // remove a mensagem da fila
             }
             }, {
             // noAck: true

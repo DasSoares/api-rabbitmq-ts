@@ -10,11 +10,11 @@ export const addMessage = async (req: Request, res: Response) => {
         amqp.sendMessage(req.body);
         await amqp.close();
         
-        return res.status(200).json({ status: true, data: { message: "Data sent to queue" }})
+        return res.status(200).json({ status: true, data: { message: "Data sent to queue" }});
     } catch (error) {
         await amqp.close();
-        logger.error("Error addMessage: %s", error.message)
-        return res.status(400).json({ status: false, data: { message:  error.message } })
+        logger.error("Error addMessage: %s", error.message);
+        return res.status(400).json({ status: false, data: { message:  error.message } });
     }
 }
 
@@ -22,5 +22,5 @@ export const getMessages = async (req: Request, res: Response) => {
     await amqp.init();
     var data = await amqp.getMessages();
     await amqp.close();
-    return res.status(200).json({dstatus: true, data: data})
+    return res.status(200).json({dstatus: true, data: data});
 }

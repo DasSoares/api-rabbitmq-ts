@@ -9,7 +9,8 @@ import { configDotenv } from "dotenv";
 import { Logger } from './logger';
 
 
-configDotenv()
+const envFile = ".env" + (process.env.NODE_ENV ? "." + process.env.NODE_ENV : "");
+configDotenv({ path: envFile });
 
 
 const app = express()
