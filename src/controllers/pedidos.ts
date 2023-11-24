@@ -22,5 +22,5 @@ export const getMessages = async (req: Request, res: Response) => {
     await amqp.init();
     var data = await amqp.getMessages();
     await amqp.close();
-    return res.status(200).json({dstatus: true, data: data});
+    return res.status(200).json({status: true, data: data});
 }
